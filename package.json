@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "bin": {
-    "compress-images": "./compress_images.js"
+    "compress-images": "./compress-images.js"
   },
   "dependencies": {
     "commander": "^11.0.0",

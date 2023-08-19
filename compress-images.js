@@ -4,7 +4,7 @@
 const fs = require("node:fs");
 const path = require("node:path");
 const sharp = require("sharp");
-const { program } = require("command");
+const { program } = require("commander");
 
 // Define CLI program
 program
