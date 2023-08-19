@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 // import required modules
-const fs = require("node:fs");
-const path = require("node:path");
+const fs = require("fs");
+const path = require("path");
 const sharp = require("sharp");
 const { program } = require("commander");
 
@@ -25,7 +25,12 @@ if (!fs.existsSync(input)) {
 
 // Check if output directory exists
 if (output && !fs.existsSync(output)) {
-  fs.mkdirSync(output, { recursive: true }); // creates directories necessary from beginning to end
+  try {
+    fs.mkdirSync(output, { recursive: true }); // creates directories necessary from beginning to end
+  } catch (error) {
+    console.error(`Error creating output directory: ${error.message}`);
+    process.exit(1);
+  }
 }
 
 // Image Compressing Function
