@@ -9,6 +9,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bin": {
+    "compress-images": "./compress_images.js"
+  },
   "dependencies": {
     "commander": "^11.0.0",
     "sharp": "^0.32.5"
