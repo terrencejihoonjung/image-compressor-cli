@@ -20,5 +20,34 @@ const { input, output } = program;
 // Check if input directory exists
 if (!fs.existsSync(input)) {
   console.error("Input directory does not exist"); // output error in console
-  process.exit(1); // exits CLI program
+  process.exit(1); // exits CLI program, any non-zero exit code is an error basically
 }
+
+// Check if output directory exists
+if (output && !fs.existsSync(output)) {
+  fs.mkdirSync(output, { recursive: true }); // creates directories necessary from beginning to end
+}
+
+// Image Compressing Function
+function compressImage(inputPath, outputPath, file) {
+  sharp(inputPath)
+    .toFile(outputPath) // to the output path
+    .then(() => console.log(`Compressed ${file}`)) // returns promise if successful
+    .catch(
+      (error) => console.error(`Error compressing ${file}: ${error.message}`) // catches error that rises
+    );
+}
+
+// Compressing Images in Current Directory
+function compressImages(input, output) {
+  const files = fs.readdirSync(input); // Reads files in current directory
+
+  for (const file of files) {
+    const inputPath = path.join(input, file); // path of file being compressed
+    const outputPath = output ? path.join(output, file) : inputPath; // saving compressed file to path
+
+    compressImage(inputPath, outputPath, file);
+  }
+}
+
+compressImages(input, output);
