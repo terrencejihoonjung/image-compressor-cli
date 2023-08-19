@@ -12,10 +12,11 @@ program
   .description("CLI application to compress images") // provides description of what CLI app does (--help)
   .requiredOption("-i, --input <path>", "Input directory containing images") // define option flags -i and --input for specifying input
   .option("-o, --output <path>", "Output directory for compressed image") // defines option flags -o --output for specifying output
-  .parse(process.argv); // prases command-line arguments provided by user and makes values available in program object
+  .parse(process.argv); // parses command-line arguments provided by user and makes values available in program object
 
 // Parse command line arguments
 const { input, output } = program;
+console.log(input);
 
 // Check if input directory exists
 if (!fs.existsSync(input)) {
