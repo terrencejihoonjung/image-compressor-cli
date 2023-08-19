@@ -15,8 +15,10 @@ program
   .parse(process.argv); // parses command-line arguments provided by user and makes values available in program object
 
 // Parse command line arguments
-const { input, output } = program;
-console.log(input);
+// const { input, output } = program;
+const input = "./uncompressed";
+const output = "./compressed";
+// console.log(program.args);
 
 // Check if input directory exists
 if (!fs.existsSync(input)) {
