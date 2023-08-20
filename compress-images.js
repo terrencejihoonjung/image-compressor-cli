@@ -15,10 +15,7 @@ program
   .parse(process.argv); // parses command-line arguments provided by user and makes values available in program object
 
 // Parse command line arguments
-// const { input, output } = program;
-const input = "./uncompressed";
-const output = "./compressed";
-// console.log(program.args);
+const { input, output } = program.opts();
 
 // Check if input directory exists
 if (!fs.existsSync(input)) {
@@ -54,7 +51,14 @@ function compressImages(input, output) {
     const inputPath = path.join(input, file); // path of file being compressed
     const outputPath = output ? path.join(output, file) : inputPath; // saving compressed file to path
 
-    compressImage(inputPath, outputPath, file);
+    const fileInfo = fs.statSync(inputPath);
+    if (fileInfo.isFile() && file !== ".DS_Store") {
+      compressImage(inputPath, outputPath, file);
+    } else {
+      console.error(
+        `${file} is not a valid file for compression, check your directory for the invalid file(s)`
+      );
+    }
   }
 }
 
