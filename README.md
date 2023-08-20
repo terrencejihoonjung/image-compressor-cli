@@ -8,5 +8,7 @@ Takes a path as input and compresses all the images in that directory.
 * ensure that you are compressing valid iamge files (image files with .DS_Store metadata files will not work)
 * error checks for invalid files and paths
 
+## npm package download
+* [elite-image-compressor](https://www.npmjs.com/package/elite-image-compressor)
 ## Contact
 * [LinkedIn](https://www.linkedin.com/in/terrencejung/)
