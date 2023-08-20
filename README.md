@@ -10,5 +10,6 @@ Takes a path as input and compresses all the images in that directory.
 
 ## npm package download
 * [elite-image-compressor](https://www.npmjs.com/package/elite-image-compressor)
+* or use command: npm i elite-image-compressor
 ## Contact
 * [LinkedIn](https://www.linkedin.com/in/terrencejung/)
