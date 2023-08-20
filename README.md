@@ -8,4 +8,4 @@ Takes a path as input and compresses all the images in that directory.
 * ensure that you are compressing valid iamge files (image files with .DS_Store metadata files will not work)
 
 ## Contact
-(https://www.linkedin.com/in/terrencejung/ "LinkedIn")
+(https://www.linkedin.com/in/terrencejung/)
