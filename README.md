@@ -1,4 +1,4 @@
-# image-compressor-cli
+# ELITE IMAGE COMPRESSOR
 Takes a path as input and compresses all the images in that directory.
 
 ## Notes
