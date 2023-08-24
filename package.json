@@ -1,13 +1,18 @@
 {
-  "name": "compressor",
-  "version": "1.0.0",
-  "description": "",
+  "name": "elite-image-compressor",
+  "version": "1.0.1",
+  "description": "Takes a path as input and compresses all the images in that directory.",
   "main": "compress-images.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "compressor",
+    "image",
+    "compression",
+    "files"
+  ],
+  "author": "jihoonj",
   "license": "ISC",
   "bin": {
     "compress-images": "compress-images.js"
